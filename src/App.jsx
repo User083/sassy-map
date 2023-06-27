@@ -1,5 +1,5 @@
 import './App.scss'
-import { worldmap } from './assets'
+import Home from './components/Home'
 
 function App() {
 
@@ -7,7 +7,7 @@ function App() {
   return (
     <div data-testid="app" className='app'>
     <h1>Sassy Maps</h1>
-    <img src={worldmap}/>
+    <Home/>
     </div>
   )
 }
