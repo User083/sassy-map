@@ -5,10 +5,13 @@ function App() {
 
 
   return (
+    <>
+     <h1 className='title'><span className='sass'>Sassy</span> Maps</h1>
     <div data-testid="app" className='app'>
-    <h1>Sassy Maps</h1>
     <Home/>
     </div>
+    </>
+
   )
 }
 
