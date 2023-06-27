@@ -1,15 +1,37 @@
-
 import PropTypes from 'prop-types';
+import { gql, useQuery } from '@apollo/client';
+import { useState } from 'react';
 
 const WorldMap = (props) => {
+
+	const [code, setCode] = useState("ZA")
+	const {error, data, loading} = useQuery(gql`query Query
+	{
+		country(code: "${code}") {
+			name
+			capital
+			currency
+			native
+			languages
+			{
+				name
+			}
+		}
+	}`);
+
+	console.log({error, data, loading})
 	return (
+		<>
+		{loading && <p className='loading-text'>Loading...</p>}
+    	{!loading && error && <p className='error-text'>{error}</p>}
+		
 		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			viewBox={props.map.viewBox}
-			className={props.className}
-			role={props.role}
-			aria-label={props.map.label}
-		>
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox={props.map.viewBox}
+				className={props.className}
+				role={props.role}
+				aria-label={props.map.label}
+			>
 			{props.childrenBefore}
 			{props.map.locations.map((location, index) => {
 				return (
@@ -25,7 +47,7 @@ const WorldMap = (props) => {
 						onMouseOver={props.onLocationMouseOver}
 						onMouseOut={props.onLocationMouseOut}
 						onMouseMove={props.onLocationMouseMove}
-						onClick={props.onLocationClick}
+						onClick={() => {setCode(location.id.toUpperCase())}}
 						onKeyDown={props.onLocationKeyDown}
 						onFocus={props.onLocationFocus}
 						onBlur={props.onLocationBlur}
@@ -35,6 +57,8 @@ const WorldMap = (props) => {
 			})}
 			{props.childrenAfter}
 		</svg>
+		</>
+		
 	);
 }
 
