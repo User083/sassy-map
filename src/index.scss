@@ -1,1 +1,24 @@
+.world-map {
+	width: 100%;
+	height: auto;
+	stroke: #083235;
+	stroke-width: 1;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+    background-color: #FEFFFF;
+
+	&__location {
+		fill: #1BAAB3;
+		cursor: pointer;
+
+		&:focus{
+            fill: #FE968E;
+			outline: 0;
+        }
+		&:hover {
+			fill: #B8F0F4;
+			outline: 0;
+		}
+	}
+}
 
