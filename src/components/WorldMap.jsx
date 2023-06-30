@@ -2,6 +2,8 @@ import { gql, useQuery } from '@apollo/client';
 import { useState } from 'react';
 import InfoCard from './InfoCard';
 import { loaderW } from '../assets';
+import Header from './Header';
+import Footer from './Footer';
 
 
 
@@ -60,11 +62,15 @@ const WorldMap = (props) => {
 				</svg>	
 			</div>
 			<div className='sidebar'>
+				<Header/>
+				
 			{loading && <img src={loaderW} className='loader'/>}
 			{!loading && error && <p className='error'>{error}</p>}
 			{!loading && !error && data &&  
 			<InfoCard {...data.country}/>}
+			<Footer/>
 			</div>
+			
 		</div>
 		
 	);

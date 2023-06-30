@@ -11,7 +11,7 @@ $web-white: #FEFFFF;
 *{
     font-family: 'Josefin Sans', sans-serif;  
     margin: 0;
-    background-color: transparent;
+    background-color: $web-black;
 }
 .app {
     display: flex;
@@ -37,7 +37,8 @@ $web-white: #FEFFFF;
 .logo
 {
     height: 30px;
-    padding: 5px;
+    padding: 0px;
+    margin: 10px;
     background-color: transparent;
     &:hover{
         animation: spin 5000ms linear infinite;
@@ -50,12 +51,13 @@ $web-white: #FEFFFF;
         }
     }
     }
+    border-radius: 20px;
+    box-shadow: 0.1em 0.1em 1em 0.1em rgba(255, 255, 255, 0.3);
 }
 
 .container {
     display: flex;
-    margin-top: 1rem;
-    margin-bottom: 10rem;
+    margin-top: 2rem;
     width: 90%;
     align-items: center;
     justify-content: space-around;
@@ -73,7 +75,12 @@ $web-white: #FEFFFF;
     }
     
     .sidebar {
-        width: 15%;       
+        width: 15%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 1rem;       
             @media (max-width: 1024px) {
             width: fit-content;  
             }
@@ -85,8 +92,10 @@ $web-white: #FEFFFF;
 {
     display: flex;
     flex-direction: column; 
+    justify-content: center;
+    align-items: center;
     .title{
-        margin-left: 6rem;
+
         @media (max-width: 1024px) {
             text-align: center; 
             margin-left: 0;   
@@ -110,12 +119,12 @@ $web-white: #FEFFFF;
         display: flex;
         align-items: center;        
         gap: 1rem; 
-        margin-left: 8rem;
-        margin-bottom: 1rem;
+        margin-bottom: 1rem; 
+        justify-content: center;
         @media (max-width: 1024px) {
             text-align: center; 
             margin-left: 2rem; 
-            justify-content: center;
+           
         }
     }
 }
@@ -138,8 +147,8 @@ $web-white: #FEFFFF;
     align-items: center;   
     padding: 1rem;
     bottom: 0;
-    width: 99%;
-    position:fixed;
+    background-color: transparent;
+
     .footer-section{
         display: flex;
         flex-direction: column;
@@ -170,9 +179,10 @@ $web-white: #FEFFFF;
             }
     }
     &:hover{
-        animation: pulse 1s linear infinite;
-        
+        animation: pulse 1s linear infinite;   
     }
+    border-radius: 20px;
+    box-shadow: 0.1em 0.1em 1em 0.1em rgba(255, 255, 255, 0.3);
 }
 
 .loading {
@@ -194,10 +204,10 @@ $web-white: #FEFFFF;
 
     .world-map {
         position: relative;
-        background-color: $secondary-color;
+        background-color: $web-black;
         z-index: 0;
         padding: 2rem;
-        stroke: $web-black;
+        stroke: $secondary-color;
         stroke-width: 1;
         stroke-linecap: round;
         stroke-linejoin: round;
@@ -210,14 +220,14 @@ $web-white: #FEFFFF;
             cursor: pointer;            
          transition: 0.1s ease-out;
             &:focus{
-                fill: $web-black;
+                fill: $highlight-color;
                 stroke: $web-white;
                 outline: 0;
             }
             &:hover {
-                fill: $highlight-color;
+                fill: $web-black;
                 outline: 0;
-                stroke: $secondary-color;
+                stroke: $web-white;
                 z-index: 1;
             }
         }
