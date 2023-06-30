@@ -1,8 +1,9 @@
-import PropTypes from 'prop-types';
 import { gql, useQuery } from '@apollo/client';
 import { useState } from 'react';
 import InfoCard from './InfoCard';
 import { loaderW } from '../assets';
+
+
 
 const WorldMap = (props) => {
 
@@ -31,6 +32,7 @@ const WorldMap = (props) => {
 			<div className='map-container'>
 				<svg
 						xmlns="http://www.w3.org/2000/svg"
+						id='world-map'
 						viewBox={props.map.viewBox}
 						className={props.className}
 						role={props.role}
