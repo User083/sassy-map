@@ -1,3 +1,4 @@
-import worldmap from "./world.svg"
+import loader from "./loading.png"
+import loaderW from "./loadingW.png"
 
-export {worldmap}
+export {loader, loaderW}
