@@ -1,16 +1,19 @@
 import './App.scss'
 import Home from './components/Home'
+import Footer from './components/Footer'
+import Header from './components/Header'
 
 function App() {
 
 
   return (
-    <div id='app'>
-     <h1 className='title'><span className='sass'>Sassy</span> Map</h1>
-     <p className='subtitle'>powered by GraphQL</p>
-    <div data-testid="app" className='app'>
+    <div id='app' className='app'>
+      <Header/>
+    <div data-testid="app" className='content'>
     <Home/>
+    
     </div>
+   <Footer/>
     </div>
 
   )

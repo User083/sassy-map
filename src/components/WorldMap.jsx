@@ -23,12 +23,7 @@ const WorldMap = (props) => {
 	}`);
 	return (
 		<div className='container'>
-			<div className='sidebar'>
-			{loading && <img src={loaderW} className='loader'/>}
-			{!loading && error && <p className='error'>{error}</p>}
-			{!loading && !error && data &&  
-			<InfoCard {...data.country}/>}
-			</div>
+			
 			<div className='map-container'>
 				<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +59,12 @@ const WorldMap = (props) => {
 					{props.childrenAfter}
 				</svg>	
 			</div>
-			
+			<div className='sidebar'>
+			{loading && <img src={loaderW} className='loader'/>}
+			{!loading && error && <p className='error'>{error}</p>}
+			{!loading && !error && data &&  
+			<InfoCard {...data.country}/>}
+			</div>
 		</div>
 		
 	);
